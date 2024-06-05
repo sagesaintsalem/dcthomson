@@ -8,7 +8,7 @@ app.get("/messages", (_request, result) => {
         result.json(messages);
         localStorage.setItem(messages);
     } catch (error){
-        console.error("Error: " + error)
+        localStorage.error("Error: " + error)
     }
 })
 
@@ -16,7 +16,7 @@ app.post("/messages", (request, result) => {
     try {
         messages.unshift(request.body);
         result.json(request.body);
-        localStorage.setItem(messages);
+        sessionStorage.setItem(messages);
     } catch (error){
         console.error("Error: " + error)
     }

@@ -16,6 +16,7 @@ To run -
 Tests - 
 
 - "DCThomson.postman_collection.json" is a list of API tests in Postman
-- Test were also written in Jest and are accessible by following these instructions - 
+- Test were also written in Jest and are accessible by following these instructions:
+  
             - open the tests folder in the Terminal or Command Line
             - type npm run test

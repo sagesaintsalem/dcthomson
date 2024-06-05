@@ -10,7 +10,6 @@ app.get("/messages", (_request, result) => {
 
 app.post("/messages", (request, result) => {
     messages.unshift(request.body);
-    console.log(request.body);
     result.json(request.body);
     localStorage.setItem(messages);
 })

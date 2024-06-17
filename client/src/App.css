@@ -23,3 +23,10 @@ form {
     width: 90vw;
 }
 
+.messageFeedMessage {
+    padding-bottom: 1em;
+}
+
+.time {
+    font-size: small;
+}

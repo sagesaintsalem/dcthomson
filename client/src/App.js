@@ -9,7 +9,6 @@ function App() {
   const [userMessage, setUserMessage] = useState("");
 
 
-
   useEffect(() => {
     fetch("/messages").then(
       response => response.json()
@@ -35,13 +34,14 @@ function App() {
     setUserMessage('')
 };
 
+
   //This takes information from the form and posts it to Messages before refreshing the Message feed
   const submitForm = async (event) => {
     event.preventDefault();
     if(username && userMessage) {
       const payload = {
         name: username,
-        message: userMessage
+        message: userMessage,
       }
       await fetch("/messages", {
         method: 'POST',
@@ -60,6 +60,7 @@ function App() {
         }
       )
       resetForm();
+      
     } 
   }
 
@@ -77,7 +78,7 @@ function App() {
       {(!messages) ? (
         <p>Loading...</p>
       ) : (messages.map((message, i) => (
-        <p key={i}className='messageFeedMessage'><strong>{message.name}:</strong> {message.message}</p>
+        <p key={i}className='messageFeedMessage'><strong>{message.name}: </strong>{message.message}</p>
       )))}
       </div>
     </body>
